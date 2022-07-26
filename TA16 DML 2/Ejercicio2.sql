@@ -1,3 +1,31 @@
+#2.1
+select APELLIDOS
+from empleados;
+
+#2.2
+select distinct APELLIDOS
+from empleados;
+
+#2.3
+select *
+from empleados
+where APELLIDOS = 'Smith';
+
+#2.4
+select *
+from empleados
+where APELLIDOS = 'Smith' OR APELLIDOS = 'Rogers';
+
+#2.5
+select *
+from empleados
+where DEPARTAMENTO = 14;
+
+#2.6
+select *
+from empleados
+where DEPARTAMENTO = 37 OR DEPARTAMENTO = 77;
+
 # 2.7
 select APELLIDOS from empleados
 where APELLIDOS Like 'P%';
