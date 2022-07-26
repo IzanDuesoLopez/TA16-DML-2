@@ -43,7 +43,7 @@ set VALOR = VALOR - VALOR * 0.15;
 # 3.14
 update cajas
 set VALOR = VALOR - VALOR * 0.2
-where VALOR > (select avg(VALOR) from cajas);
+where VALOR > (SELECT AVG(VALOR) FROM cajas);
 
 # 3.15
 Delete from cajas
