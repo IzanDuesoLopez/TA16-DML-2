@@ -46,3 +46,10 @@ INNER JOIN departamentos ON empleados.DEPARTAMENTO = departamentos.CODIGO);
 select empleados.nombre as nombre, empleados.APELLIDOS as APELLIDOS,  departamentos.NOMBRE as NOMBRE, departamentos.PRESUPUESTO as PRESUPUESTO
 from (empleados
 INNER JOIN departamentos ON empleados.DEPARTAMENTO = departamentos.CODIGO);
+
+# 2.19
+Delete from empleados
+where departamento in (select codigo from departamentos where presupuesto >= 60000);
+
+# 2.20
+DELETE FROM empleados;
