@@ -83,6 +83,10 @@ set DEPARTAMENTO = 14
 where DEPARTAMENTO = 77;
 select * from empleados;
 
+#2.18
+delete from empleados 
+where empleados.departamento=14;
+
 #2.19
 Delete from empleados
 where departamento in (select codigo from departamentos where presupuesto >= 60000);
