@@ -32,3 +32,23 @@ having almacenes.LUGAR = 'Bilbao';
 
 #3.11
 INSERT INTO `almacenes` VALUES (6,'Barcelona',3);
+
+# 3.12
+INSERT INTO `cajas` VALUES ('H5','Papel',200,2);
+
+# 3.13
+update cajas
+set VALOR = VALOR - VALOR * 0.15;
+
+# 3.14
+update cajas
+set VALOR = VALOR - VALOR * 0.2
+where VALOR > (select avg(VALOR) from cajas);
+
+# 3.15
+Delete from cajas
+where VALOR <= 100;
+
+# 3.16
+Delete from almacenes
+where ALMACEN in (select CODIGO from almacenes where CAPACIDAD < (select count(*) from cajas where almacenes = CODIGO));
