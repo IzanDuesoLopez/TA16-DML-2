@@ -11,15 +11,14 @@ select * from peliculas where CALIFICACIONEDAD is null;
 select * from salas where pelicula is null;
 
 # 4.5
-select *
-from (salas
-inner join peliculas 
-on salas.PELICULA = peliculas.CODIGO)
-group by salas.CODIGO;
+select * from peliculas p
+right join salas s 
+on p.codigo = s.pelicula;
 
-#4.6
-
-
+# 4.6
+select * from salas s
+right join peliculas p
+on s.pelicula = p.codigo;
 
 # 4.7
 select distinct p.NOMBRE, s.NOMBRE
