@@ -1,5 +1,31 @@
 use actividades;
 
+#3.1
+select * from almacenes;
+
+#3.2
+select * from cajas
+where cajas.valor > 150;
+
+#3.3
+select distinct contenido from cajas;
+
+#3.4
+select avg(valor) from cajas;
+
+#3.5
+select almacenes.codigo as codigo, avg(cajas.valor) as valor_medio 
+from almacenes, cajas
+where almacenes.codigo=cajas.almacen
+group by almacenes.codigo;
+
+#3.6
+select almacenes.codigo as codigo, avg(cajas.valor) as valor_medio 
+from almacenes, cajas
+where almacenes.codigo=cajas.almacen
+group by almacenes.codigo
+having avg(cajas.valor) > 150;
+
 #3.7
 select cajas.NUMREFERENCIA, almacenes.LUGAR
 from (cajas
