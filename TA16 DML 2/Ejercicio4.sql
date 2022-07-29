@@ -24,3 +24,22 @@ on s.pelicula = p.codigo;
 select distinct p.NOMBRE, s.NOMBRE
 from peliculas AS p, salas AS s
 where s.PELICULA IS NULL;
+
+#4.8
+insert into peliculas values (9789, "Uno, Dos, Tres", 7);
+
+#4.9
+update peliculas
+set calificacionedad=13
+where calificacionedad is null;
+
+select * from peliculas 
+where peliculas.calificacionedad=13;
+
+#4.10
+delete from salas
+where pelicula in (
+    select codigo
+    from peliculas 
+    where calificacionedad like '%G'
+);
